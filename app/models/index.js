@@ -6,7 +6,7 @@ const db = {};
 db.Cliente = require('./Cliente.js');
 db.Filme = require('./Filme.js');
 db.Aluguel = require('./Aluguel.js');
-db.Usuario = require('./Usuario.js').UsuarioModel; // Mantém o padrão antigo para não quebrar
+db.Usuario = require('./Usuario.js');
 
 
 //lista de associacoes

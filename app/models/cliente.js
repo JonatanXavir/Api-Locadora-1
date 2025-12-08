@@ -12,6 +12,12 @@ const Cliente = db.define('cliente', {
     type: Sequelize.STRING(255),
     allowNull: false,
   },
+  email: {
+    type: Sequelize.STRING(255),
+    allowNull: false,
+    unique: true,
+    validate: { isEmail: true },
+  },
   cpf: {
     type: Sequelize.STRING(11),
     allowNull: false,

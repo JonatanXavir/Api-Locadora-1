@@ -22,16 +22,11 @@ app.get('/', (request, response) => {
   });
 });
 
-// Renomeando e ajustando as importações de rotas
-const clienteRotas = require('./app/routes/cliente.routes.js');
-const usuarioRotas = require('./app/routes/usuario.routes.js');
-const filmeRotas = require('./app/routes/filme.routes.js');
-const aluguelRotas = require('./app/routes/aluguel.routes.js');
-
-app.use(clienteRotas);
-app.use(usuarioRotas);
-app.use(filmeRotas);
-app.use(aluguelRotas);
+// Carregando e utilizando as rotas da aplicação
+app.use(require('./app/routes/cliente.routes.js'));
+app.use(require('./app/routes/usuario.routes.js'));
+app.use(require('./app/routes/filme.routes.js'));
+app.use(require('./app/routes/aluguel.routes.js'));
 
 //RODANDO SERVER
 app.listen(config.port, () => {
