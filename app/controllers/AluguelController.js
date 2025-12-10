@@ -21,7 +21,7 @@ class AluguelController {
     const validacoes = validador(req.body);
     if (validacoes) return true;
 
-    localize.pt(validador.errors);
+    localize(validador.errors);
     const erros = validador.errors.map((e) => e.message);
     res.status(400).json({ error: 'Dados inválidos.', details: erros });
     return false;
@@ -117,7 +117,14 @@ class AluguelController {
         return res.status(404).json({ error: 'Aluguel não encontrado.' });
       }
 
-      const aluguelAtualizado = await aluguel.update(req.body);
+      // Mapeia os campos do req.body para os campos do modelo
+      const dadosParaAtualizar = {};
+      if (req.body.data_devolucao) {
+        dadosParaAtualizar.dataDevolucaoReal = req.body.data_devolucao;
+      }
+      // Adicione outros campos permitidos para atualização aqui, se houver
+
+      const aluguelAtualizado = await aluguel.update(dadosParaAtualizar);
 
       return res.json(aluguelAtualizado);
     } catch (error) {
