@@ -2,6 +2,52 @@
 
 Esta é uma API RESTful para gerenciar os recursos de uma locadora de filmes, incluindo clientes, filmes e aluguéis.
 
+## Funcionalidades
+
+- **Autenticação**: Sistema de login seguro com JWT para proteger as rotas.
+- **Gerenciamento de Clientes**: Operações CRUD (Criar, Ler, Atualizar, Deletar) para clientes.
+- **Gerenciamento de Filmes**: Operações CRUD para o acervo de filmes, com opção de filtrar por disponibilidade.
+- **Gerenciamento de Aluguéis**: Sistema completo para registrar e controlar aluguéis, com cálculo automático de valor e data de devolução prevista.
+
+## Tecnologias Utilizadas
+
+- **Backend**: Node.js
+- **Framework**: Express.js
+- **ORM**: Sequelize
+- **Validação de Dados**: AJV
+- **Autenticação**: JSON Web Tokens (JWT) e Bcrypt.js
+- **Banco de Dados**: (Pode ser configurado para PostgreSQL, MySQL, SQLite, etc., via Sequelize)
+
+## Configuração do Ambiente
+
+Siga os passos abaixo para configurar e executar o projeto localmente.
+
+1.  **Clone o repositório:**
+    ```bash
+    git clone https://github.com/seu-usuario/Api-Locadora-1.git
+    cd Api-Locadora-1
+    ```
+
+2.  **Instale as dependências:**
+    ```bash
+    npm install
+    ```
+
+3.  **Configure as variáveis de ambiente:**
+    Crie um arquivo `.env` na raiz do projeto, seguindo o exemplo do arquivo `.env.example` (se houver). Ele deve conter as credenciais do banco de dados e o segredo do JWT.
+    ```
+    DB_HOST=localhost
+    DB_USER=seu_usuario
+    DB_PASS=sua_senha
+    DB_NAME=locadora_db
+    JWT_SECRET=seu_segredo_super_secreto
+    ```
+
+4.  **Inicie o servidor:**
+    ```bash
+    npm run dev
+    ```
+
 ## Endpoints da API
 
 A URL base para todos os endpoints é a raiz do servidor (ex: `http://localhost:3000`).
