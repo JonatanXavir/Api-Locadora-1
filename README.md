@@ -79,17 +79,21 @@ A URL base para todos os endpoints é a raiz do servidor (ex: `http://localhost:
   [
     {
       "id": 1,
-      "data_aluguel": "2023-10-28",
-      "data_devolucao": null,
+      "dataAluguel": "2023-10-28T03:00:00.000Z",
+      "dataDevolucaoPrevista": "2023-11-04T03:00:00.000Z",
+      "dataDevolucaoReal": null,
+      "valor": "15.00",
       "clienteId": 1,
       "filmeId": 5,
       "cliente": {
         "id": 1,
-        "nome": "João da Silva"
+        "nome": "João da Silva",
+        "email": "joao.silva@example.com"
       },
       "filme": {
         "id": 5,
-        "titulo": "A Origem"
+        "titulo": "A Origem",
+        "disponivel": false
       }
     }
   ]
