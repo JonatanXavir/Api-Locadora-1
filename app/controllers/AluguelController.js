@@ -77,7 +77,22 @@ class AluguelController {
     if (!this._validar(req, res, validaStore)) return;
 
     try {
-      const novoAluguel = await Aluguel.create(req.body);
+      const { clienteId, filmeId, data_aluguel } = req.body;
+
+      // Lógica de negócio: Calcular data de devolução e valor
+      const dataAluguel = new Date(data_aluguel);
+      const dataDevolucaoPrevista = new Date(dataAluguel);
+      dataDevolucaoPrevista.setDate(dataAluguel.getDate() + 7); // Adiciona 7 dias
+
+      const dadosParaCriar = {
+        clienteId,
+        filmeId,
+        dataAluguel: data_aluguel, // O model espera dataAluguel (camelCase)
+        dataDevolucaoPrevista,
+        valor: 15.00, // Valor fixo como exemplo
+      };
+
+      const novoAluguel = await Aluguel.create(dadosParaCriar);
       return res.status(201).json(novoAluguel);
     } catch (error) {
       console.error('Erro ao criar aluguel:', error);

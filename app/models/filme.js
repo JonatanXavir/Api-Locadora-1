@@ -12,6 +12,10 @@ const Filme = db.define('filme', {
     type: Sequelize.STRING(255),
     allowNull: false,
   },
+  diretor: {
+    type: Sequelize.STRING(255),
+    allowNull: false,
+  },
   genero: {
     type: Sequelize.STRING(100),
     allowNull: false,
@@ -21,7 +25,7 @@ const Filme = db.define('filme', {
     allowNull: false,
   },
   disponivel: {
-    type: Sequelize.BOOLEAN,
+    type: Sequelize.DataTypes.BOOLEAN,
     allowNull: false,
     defaultValue: true,
   },

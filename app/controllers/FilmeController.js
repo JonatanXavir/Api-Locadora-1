@@ -18,7 +18,7 @@ class FilmeController {
     const validacoes = validador(req.body);
     if (validacoes) return true;
 
-    localize.pt(validador.errors);
+    localize(validador.errors);
     const erros = validador.errors.map((e) => e.message);
     res.status(400).json({ error: 'Dados inválidos.', details: erros });
     return false;

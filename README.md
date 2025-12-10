@@ -148,7 +148,7 @@ A URL base para todos os endpoints é a raiz do servidor (ex: `http://localhost:
     "titulo": "Pulp Fiction",
     "diretor": "Quentin Tarantino",
     "genero": "Crime/Drama",
-    "ano": 1994
+    "anoLancamento": 1994
   }
   ```
 
