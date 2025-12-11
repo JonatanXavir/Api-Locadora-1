@@ -4,7 +4,7 @@ const db = {};
 
 //importar aqui para atribuir na lista de models e inicializar o BD:
 db.Cliente = require('./cliente.js');
-db.Filme = require('./Filme.js');
+db.Filme = require('./filme.js');
 db.Aluguel = require('./Aluguel.js');
 db.Usuario = require('./Usuario.js');
 
