@@ -10,6 +10,11 @@ module.exports = {
     user: process.env.DBUSER,
     passwd: process.env.DBPASS,
     dialect: process.env.DBDIALECT,
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false // Necessário para o Render aceitar o certificado
+      },
     pool: {
       max: 5,
       min: 0,
