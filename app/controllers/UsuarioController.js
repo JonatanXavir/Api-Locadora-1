@@ -38,7 +38,7 @@ class UsuarioController {
 
       const data = await Usuario.create(usuario);
       data.setDataValue('senha', '');
-      data.setDataValue('token', helper.gerarTokenAcesso(data.nome, data.id));
+      data.setDataValue('access_token', helper.gerarTokenAcesso(data.nome, data.id));
       return res.status(201).json(data);
     } catch (error) {
       if (error.name === 'SequelizeUniqueConstraintError') {
@@ -63,7 +63,7 @@ class UsuarioController {
       if (!registro) {
         return res.status(401).json({ error: 'Usuário ou senha inválidos.' });
       }
-      return res.status(200).json({ token: helper.gerarTokenAcesso(registro.nome, registro.id) });
+      return res.status(200).json({ access_token: helper.gerarTokenAcesso(registro.nome, registro.id) });
     } catch (error) {
       console.error('Erro no login:', error);
       return res.status(500).json({ error: 'Erro interno do servidor.' });

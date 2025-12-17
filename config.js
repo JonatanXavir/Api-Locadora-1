@@ -14,7 +14,8 @@ module.exports = {
       ssl: {
         require: true,
         rejectUnauthorized: false // Necessário para o Render aceitar o certificado
-      }},
+      }
+    },
 
     pool: {
       max: 5,

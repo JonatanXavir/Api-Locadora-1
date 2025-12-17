@@ -7,7 +7,8 @@ const app = express();
 app.use(express.json()); //parser dados de requisicoes em JSON
 app.use(
   cors({
-    origin: '*',
+        origin: 'http://localhost:5173', // Substitua pelo domínio do seu frontend
+    credentials: true, // Adicione esta linha para permitir que o frontend envie credenciais (como cookies ou headers de autorização),
   })
 );
 
